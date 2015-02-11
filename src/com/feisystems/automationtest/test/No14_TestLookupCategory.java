@@ -1,0 +1,196 @@
+package com.feisystems.automationtest.test;
+
+import org.apache.log4j.Logger;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+import com.feisystems.automationtest.libary.SeleniumWrapper;
+import com.feisystems.automationtest.libary.TestUtils;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class No14_TestLookupCategory {
+	static Logger logger = TestUtils.getLogger(No14_TestLookupCategory.class);
+	static SeleniumWrapper selenium  = new SeleniumWrapper();
+	static String categoryName = "UserCreated_LookupCategory_" + TestUtils.getRandomNumber(6);
+
+	@Test
+	public void testLookupCategory() throws Exception {
+		selenium.open(selenium.baseUrl);
+		selenium.click("btnLogin");
+		selenium.click("id=_topmenulink_Menu");
+		selenium.click("id=_topmenulink_Menu_Tools");
+		selenium.click("id=_topmenulink_Lookups_LookupItem_List");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_leftnavlink_Lookups_LookupCategory_List");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_contentlink_Lookups_LookupCategory_Create");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupCategory_Name", categoryName);
+		selenium.type("id=LookupCategory_DisplayName", "User Created_Lookup Category_1");
+		selenium.click("id=btnSaveCreatedLookupCategory");
+		selenium.waitForPageToLoad("30000");
+		selenium.runScript("window.location.href = $('td span:contains(\"" + categoryName + "\")').parent().siblings().find('a:contains(\"Lookup Items\")').attr('href')");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_contentlink_Lookups_LookupItem_Create");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupItem_Name", "UserCreated_LookupItem_1");
+		selenium.type("id=LookupItem_Abbreviation", "LookupItem_1");
+		selenium.type("id=LookupItem_Description", "Plan of Care is a personalized service plan for each individual person admitted into the waiver.  The plan of care is developed for each participant and all waiver services are furnished pursuant to the plan of care. The plan of care describes:");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=assessmentinterraihctypes");
+		selenium.click("id=unique1");
+		selenium.click("id=unique2");
+		selenium.click("id=unique3");
+		selenium.click("id=unique4");
+		selenium.click("id=ButtonAddRuleAttributes");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=btnSaveCreatedLookupItem");
+		selenium.click("id=_contentlink_Lookups_LookupItem_Create");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupItem_Name", "UserCreated_LookupItem_2");
+		selenium.type("id=LookupItem_Abbreviation", "LookupItem_2");
+		selenium.type("id=LookupItem_Description", "The waiver services that are furnished to the participant, their projected frequency and the type of provider that furnishes each service and");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=attachmenttypes");
+		selenium.click("id=unique1");
+		selenium.click("id=ButtonAddRuleAttributes");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=btnSaveCreatedLookupItem");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_contentlink_Lookups_LookupItem_Create");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupItem_Name", "UserCreated_LookupItem_3");
+		selenium.type("id=LookupItem_Abbreviation", "LookupItem_3");
+		selenium.type("id=LookupItem_Description", "The other services (regardless of funding source, including State plan services) and informal supports that complement waiver services in meeting the needs of the participant.  The requirements for this module are captured separately in its own document");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=assessmentinterraihctypes");
+		selenium.click("id=unique1");
+		selenium.click("id=unique3");
+		selenium.click("id=unique2");
+		selenium.click("id=ButtonAddRuleAttributes");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=btnSaveCreatedLookupItem");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_contentlink_Lookups_LookupItem_Create");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupItem_Name", "UserCreated_LookupItem_4");
+		selenium.type("id=LookupItem_Abbreviation", "LookupItem_4");
+		selenium.type("id=LookupItem_Description", "User can create a new POC Form\n?User can edit the POC form before submitting \n?User can submit the POC form for review \n?User can discard the POC form prior to submission  but must provide a reason for discarding.");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=clientaddresstypes");
+		selenium.click("id=unique1");
+		selenium.click("id=unique2");
+		selenium.click("id=unique3");
+		selenium.click("id=unique4");
+		selenium.click("id=ButtonAddRuleAttributes");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=btnSaveCreatedLookupItem");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_contentlink_Lookups_LookupItem_Create");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupItem_Name", "UserCreated_LookupItem_5");
+		selenium.type("id=LookupItem_Abbreviation", "LookupItem_5");
+		selenium.type("id=LookupItem_Description", "If user chooses to Discard, display the message \"Are you sure you want to discard the POC Form?\" and provide Options \"Yes\" AND \"No\".  Also, display the message, \"Reason for discarding form?\", and provide text field.  The field \"Reason for discarding form?\" will be required in order to discard the form.  Once the form has been discarded, the Status = Discarded and the form becomes \"Inactive\".(OK)");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=casenotecategories");
+		selenium.click("id=unique1");
+		selenium.click("id=unique2");
+		selenium.click("id=unique3");
+		selenium.click("id=ButtonAddRuleAttributes");
+		selenium.click("id=btnSaveCreatedLookupItem");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=Selected_0_");
+		selenium.click("id=Selected_1_");
+		selenium.click("id=Selected_2_");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=casenoteorganizationunitdefinitiontypes");
+		selenium.click("id=unique1");
+		selenium.click("id=unique2");
+		selenium.click("id=unique3");
+		selenium.click("id=btnSaveAddedRuleAttributes");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("//table[@id='DataTables_Table_0']/tbody/tr[1]/td[8]/a");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupItem_Name", "UserCreated_LookupItem_1_EDIT");
+		selenium.type("id=LookupItem_Abbreviation", "LookupItem_1_EDIT");
+		selenium.type("id=LookupItem_Description", "Plan of Care is a personalized service plan for each individual person admitted into the waiver.  The plan of care is developed for each participant and all waiver services are furnished pursuant to the plan of care. The plan of care describes:\nEDIT");
+		selenium.type("id=LookupItem_SortOrder", "110");
+		selenium.click("id=LookupItem_Inactive");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=clientaddresstypes");
+		selenium.click("id=unique15");
+		selenium.click("id=unique16");
+		selenium.click("id=unique17");
+		selenium.click("id=unique18");
+		selenium.click("id=unique19");
+		selenium.click("id=unique20");
+		selenium.click("id=ButtonAddRuleAttributes");
+		selenium.click("id=unique1");
+		selenium.click("id=unique3");
+		selenium.click("id=btnSaveEditLookupItem");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_contentlink_Lookups_LookupCategory_List");
+		selenium.waitForPageToLoad("30000");
+		selenium.runScript("window.location.href = $('td span:contains(\"" + categoryName + "\")').parent().siblings().find('a:contains(\"Edit\")').attr('href')");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupCategory_DisplayName", categoryName + "_EDIT");
+		selenium.click("id=btnSaveEditedLookupCategory");
+		selenium.waitForPageToLoad("30000");
+	}
+	
+	@Test
+	public void testSearchLookupItems() throws Exception {
+		selenium.open(selenium.baseUrl + "Lookups/LookupCategory/List/");
+		//selenium.click("btnLogin");
+		selenium.click("id=_leftnavlink_Lookups_LookupItem_List");
+		selenium.waitForPageToLoad("30000");
+		selenium.select("id=LookupCategory_Id", "label=" + categoryName);
+		selenium.select("id=Status", "label=Active");
+		selenium.click("id=btnLookupItemsSearch");
+
+		selenium.click("id=btnLookupItemsSearch");
+		selenium.waitForPageToLoad("30000");
+		selenium.select("id=Status", "label=Inactive");
+		selenium.click("id=btnLookupItemsSearch");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("//table[@id='LookupItemGrid']/tbody/tr[1]/td[7]/a");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=LookupItem_Name", "UserCreated_LookupItem_1_EDIT_edit again");
+		selenium.type("id=LookupItem_Abbreviation", "LookupItem_1_EDIT_edit again");
+		selenium.type("id=LookupItem_SortOrder", "1100");
+		selenium.type("id=LookupItem_Description", "Plan of Care is a personalized service plan for each individual person admitted into the waiver.  The plan of care is developed for each participant and all waiver services are furnished pursuant to the plan of care. The plan of care describes:\nEDIT\nedit again");
+		selenium.click("id=LookupItem_Inactive");
+		selenium.click("id=unique1");
+		selenium.click("id=_contentLink_AddRuleAttributes");
+		selenium.select("id=LookupCategoryId", "label=clienthomesettings");
+		selenium.click("id=unique23");
+		selenium.click("id=unique24");
+		selenium.click("id=unique25");
+		selenium.click("id=unique26");
+		selenium.click("id=unique27");
+		selenium.click("id=unique28");
+		selenium.click("id=unique29");
+		selenium.click("id=unique30");
+		selenium.click("id=unique31");
+		selenium.click("id=unique32");
+		selenium.click("id=ButtonAddRuleAttributes");
+		selenium.waitForElementHidden("id=ButtonAddRuleAttributes");
+		selenium.sleepSeconds(1);
+		selenium.click("id=btnSaveEditLookupItem");
+		selenium.waitForPageToLoad("30000");
+		selenium.select("id=Status", "label=Active");
+		selenium.select("id=LookupCategory_Id", "label=" + categoryName);
+		selenium.click("id=btnLookupItemsSearch");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("id=_leftnavlink_Lookups_LookupCategory_List");
+		selenium.waitForPageToLoad("30000");
+		selenium.runScript("$('td span:contains(\"" + categoryName + "\")').parent().siblings().find('a:contains(\"Delete\")').click()");
+		selenium.click("id=btnYes");
+		selenium.waitForPageToLoad("30000");
+		
+		selenium.stop();
+	}
+
+
+}

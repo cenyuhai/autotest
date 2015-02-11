@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Tue Jul 01 15:35:18 CST 2014
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=test.jar
+manifest.mergeall=true
+manifest.mainclass=com.feisystems.automationtest.TestProvider
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
